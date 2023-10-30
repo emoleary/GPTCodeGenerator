@@ -1,0 +1,28 @@
+
+
+Brief Overview - 
+These documents are meant to serve as a record of the decisions made throughout the week and the reasoning that necessitated them. 
+
+Note on Previous Weeks:
+    During the first week of the ILC (Week 1), I printed and reviewed the code from the open-source git project, "ShellGPT" as a guideline for my own project. Seeing that it had already successfully implemented several functions I would require for my project, namely the ability to (1) provide exclusively code as an output and (2) the capacity to execute that code.
+    Reading the code carefully provided a useful basis for contructing ChatGPT applications that I would revisit in other weeks - namely: caching responses, creating distinct roles, and the ChatCompletion object. I searched for the files that limited the output to only code, and was deeply surprised to find the only model of the parameter that was being adjusted was the role - a prompt-style delimeter of the models response behavior. This made continuing the project difficult, as I realized that I would quickly be stuck. 
+    My initial application design (barebones prototype) is an application which accepts instructions to generate code, then runs the code, and feeds the output back to itself. In each iteration, it would ask itself for a solution to the error, adjust the code accordingly, and test it for success. I knew from working through this process manually feeding errors from ChatGPT-generated code back to the model that there would be a few problems immediately :
+    (1) ChatGPT would lose track of the initial goal of the program 
+    (2) The database is dated to 2021, frequently causing errors due to dependency compatibility issues
+    (3) The model would need to keep track of previous error-correct attempts
+    (4) The response would not be correct for a larger scope - namely system or project specificities. 
+
+    With only the ability to control the prompt, I could not tackle the problems listed above. I began investigating the following topics to form the foundations of my design. 
+
+    Problem 1 Solution : Testing
+    Problem 2 Solution : Plugins
+    Problem 3 Solution : Vector Embedding for Limited Context
+    Problem 4 Solution : Vector Embedding for Fine-Tuning
+
+    Current Design Concerns / Considerations:
+    (1) Context Limits
+    (2) Effectively picking correct solutions
+    (3) Self-Hosted 
+
+This week: 
+    Initialized a create-react-app for visualizing expiraments. 

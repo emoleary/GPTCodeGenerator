@@ -1,8 +1,6 @@
-
+# import
 import chromadb
 from langchain.embeddings.openai import OpenAIEmbeddings
-
-# import
 from langchain.document_loaders import TextLoader
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
@@ -27,7 +25,7 @@ query = "What did the president say about tacos"
 docs = db.similarity_search(query)
 
 # print results
-print(f"ChromaDB Search results: \n{docs[0].page_content}")age_content)
+print(f"ChromaDB Search results: \n{docs[0].page_content}"))
 
 
 embeddings = OpenAIEmbeddings()
